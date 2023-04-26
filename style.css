@@ -59,6 +59,9 @@ html {background-image: url(./assets/images/balcony2.jpg);
   position: absolute;
   top: 35%;
   left: 70%;
+  /* border: 2px solid black;
+  background-image: url(./assets/images/blackboard.jpg);
+  background-size: cover; */
 }
 
 .drinks{
