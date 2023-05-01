@@ -72,8 +72,8 @@ html {background-image: url(./assets/images/balcony2.jpg);
   font-family: 'Nunito', sans-serif;
   color:antiquewhite;
   font-size: larger;
-  margin-top: 200px;
   text-align: center;
+  margin: 0
 }
 
 .card{
