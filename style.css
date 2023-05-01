@@ -11,7 +11,8 @@ ol {
 html {background-image: url(./assets/images/balcony2.jpg);
   background-repeat: no-repeat;
   background-position: center center;
-  background-attachment: fixed;
+  background-size: contain;
+  /* background-attachment: fixed; */
 /*   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;  */
@@ -56,14 +57,15 @@ html {background-image: url(./assets/images/balcony2.jpg);
 }
 
 .menu-container{
-  position: absolute;
-  top: 55%;
-  left: 25%;
+  /* position: absolute; */
+  /* top: 55%; */
+  /* left: 25%; */
+  height: 100vh;
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
-  /* justify-content: center; */
-  /* align-content: center; */
+  gap: 20px;
+  justify-content: center;
+  align-content: center;
 }
 
 .drinks{
@@ -71,7 +73,7 @@ html {background-image: url(./assets/images/balcony2.jpg);
   color:antiquewhite;
   font-size: larger;
   margin-top: 200px;
-  text-align: left;
+  text-align: center;
 }
 
 .card{
@@ -79,7 +81,20 @@ html {background-image: url(./assets/images/balcony2.jpg);
   width: 200px;
   border: 1px solid black;
   border-radius: 15%;
-  flex: 2;
+  flex: 1;
+  max-width: 200px;
+  min-width: 200px;
+}
+
+#rand{
+  border: 2px solid  #bc13fe;
+  border-radius: 2rem;
+  box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem #bc13fe,
+              0 0 0.8rem #bc13fe,
+              0 0 2.8rem #bc13fe,
+              inset 0 0 1.3rem #bc13fe;
 }
 
 #ccbb {
@@ -103,14 +118,8 @@ html {background-image: url(./assets/images/balcony2.jpg);
   background-size: cover;
 }
 
-/* @media (max-width:600px){
+@media (max-width:600px){
   .menu-container{
-    position: absolute;
-    top: 45%;
-    left: 25%;
-    display: flex;
     flex-direction: column;
-    gap: 20px;
-    flex-wrap: wrap;
   }
-} */
+}
