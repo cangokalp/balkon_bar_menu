@@ -36,6 +36,7 @@ html {background-image: url(./assets/images/balcony2.jpg);
   0 0 102px #FBFFB1;; */
   animation: flicker 1.5s infinite alternate;
   font-family: 'Nunito', sans-serif;
+  letter-spacing: 0.4rem;
 }
 
 
@@ -56,10 +57,21 @@ html {background-image: url(./assets/images/balcony2.jpg);
   }
 }
 
+
+.body-grid{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.welcome-container{
+  grid-column: span 4;
+}
+
 .menu-container{
   /* position: absolute; */
   /* top: 55%; */
   /* left: 25%; */
+  grid-column-start: 1;
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
@@ -71,7 +83,7 @@ html {background-image: url(./assets/images/balcony2.jpg);
 .drinks{
   font-family: 'Nunito', sans-serif;
   color:antiquewhite;
-  font-size: larger;
+  font-size: 1rem;
   text-align: center;
   margin: 0
 }
