@@ -1,9 +1,27 @@
-<!-- TODO 1: Create the HTML Boilerplate -->
+<!-- TODO 0: how to make the user intuitively understand that the card is clickable-->
+<!-- TODO 0: flip only on universe not others. others show the drink directly-->
+<!-- TODO 1: Flip card / understand how it works, edit the other side of the flip, use https://getbootstrap.com/docs/4.0/components/card/ to have image of the drink quick desc
+and lastly use the original bootstrap cards deck to use those bubbles - in the bubbles you can put ingredients whiskey lemon mint for example-->
+<!-- TODO 2: Replicate for other cards -->
+<!-- rolling yesil erik limon mint -->
+<!-- TODO 3: Universe pick js -->
+<!-- TODO 4: Drink section background animated whiskey lemon mint emojis sliding left to right on whitesmoke color-->
+<!-- TODO 5: Drink section background change to andromeda, hide other items when clicked universe pick-->
+<!-- TODO 6: Carousel sizing -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>balkon</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" href="./style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,39 +32,348 @@
     />
   </head>
   <body>
-    <div class="welcome-container">
-      <h1 id="welcome">balkon</h1>
-    </div>
+    <!-- Title -->
+    <section id="title" class="image-background">
+      <div class="px-4 py-5 text-left">
+        <h1 class="px-2 py-2" id="welcome">balkon</h1>
+      </div>
+    </section>
 
-    <div class="menu-container">
-      <div class="card-container">
-        <div class="card" id="ccbb"></div>
-        <p class="drinks">Cherry Cherry Bang Bang</p>
+    <!-- Menu -->
+    <section id="menu" class="gradient-background">
+      <div class="container px-4 py-5" id="custom-cards">
+        <h2 class="pb-2 border-bottom">Drinks</h2>
+
+        <div
+          class="row flex-row align-items-center justify-content-center py-2"
+        >
+          <div class="col-8 drink-card">
+            <div
+              class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+              style="width: 400px; height: 400px"
+            >
+              <img
+                class="card-img-top"
+                src="./assets/images/doublecherry.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body" style="background-color: whitesmoke">
+                <p class="card-text" style="color: black">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+
+                <div class="d-flex flex-column h-100 text-white text-shadow-1">
+                  <ul class="d-flex list-unstyled mt-auto">
+                    <li class="mx-2">
+                      <img
+                        src="./assets/icons/whiskey.png"
+                        alt="Bootstrap"
+                        width="32"
+                        height="32"
+                        class="rounded-circle border border-black"
+                      />
+                    </li>
+                    <li class="mx-2">
+                      <img
+                        src="./assets/icons/lemon.svg"
+                        alt="Bootstrap"
+                        width="32"
+                        height="32"
+                        class="rounded-circle border border-black"
+                      />
+                    </li>
+                    <li class="mx-2">
+                      <img
+                        src="./assets/icons/ice-cube.svg"
+                        alt="Bootstrap"
+                        width="32"
+                        height="32"
+                        class="rounded-circle border border-black"
+                      />
+                    </li>
+                    <li class="mx-2">
+                      <img
+                        src="./assets/icons/mint2.jpg"
+                        alt="Bootstrap"
+                        width="32"
+                        height="32"
+                        class="rounded-circle border border-black"
+                      />
+                    </li>
+                    <!-- <li class="d-flex align-items-center me-3">
+                      <svg class="bi me-2" width="1em" height="1em">
+                        <use xlink:href="#geo-fill"></use>
+                      </svg>
+                      <small>Pakistan</small>
+                    </li>
+                    <li class="d-flex align-items-center">
+                      <svg class="bi me-2" width="1em" height="1em">
+                        <use xlink:href="#calendar3"></use>
+                      </svg>
+                      <small>4d</small>
+                    </li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4 name-block">
+            <p class="drinks">Cherry Cherry Bang Bang</p>
+          </div>
+        </div>
+
+        <div
+          class="row flex-row align-items-center justify-content-center py-2"
+        >
+          <div class="col-8 drink-card">
+            <div class="scene scene--card">
+              <div
+                class="card rotating-card card-cover overflow-hidden text-bg-dark rounded-4"
+                id="rand-card"
+              >
+                <div class="card__face card__face--front">
+                  <div
+                    style="
+                      width: 400px;
+                      height: 400px;
+                      background-image: url('./assets/images/random.jpg');
+                      background-size: cover;
+                      background-repeat: no-repeat;
+                    "
+                  ></div>
+                </div>
+                <div
+                  style="
+                    width: 400px;
+                    height: 400px;
+                    background-image: url('./assets/images/random.jpg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                  "
+                ></div>
+                <div class="card__face card__face--back"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4 name-block">
+            <p class="drinks" id="rand-drink">I'm feeling lucky</p>
+          </div>
+
+          <!-- <div class="col drink-card">
+            <div
+              class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+              style="
+                width: 400px;
+                height: 400px;
+                background-image: url('./assets/images/lemon2.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+              "
+            >
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                  Another longer title belongs here
+                </h3>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img
+                      src="https://github.com/twbs.png"
+                      alt="Bootstrap"
+                      width="32"
+                      height="32"
+                      class="rounded-circle border border-white"
+                    />
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em">
+                      <use xlink:href="#geo-fill"></use>
+                    </svg>
+                    <small>California</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em">
+                      <use xlink:href="#calendar3"></use>
+                    </svg>
+                    <small>5d</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- <div class="col drink-card">
+            <div
+              class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+              style="
+                width: 400px;
+                height: 400px;
+                background-image: url('./assets/images/random.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+              "
+            >
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                  Another longer title belongs here
+                </h3>
+              </div>
+            </div>
+          </div> -->
+        </div>
       </div>
 
-      <div class="card-container">
-        <div class="card" id="ocs"></div>
-        <p class="drinks">One Cherry Short</p>
+      <!-- <div class="menu-container">
+        <div class="card-container">
+          <div class="card" id="ccbb"></div>
+          <p class="drinks">Cherry Cherry Bang Bang</p>
+        </div>
+
+        <div class="card-container">
+          <div class="card" id="ocs"></div>
+          <p class="drinks">One Cherry Short</p>
+        </div>
+
+        <div class="card-container">
+          <div class="card" id="ws"></div>
+          <p class="drinks">Whiskey Smash</p>
+        </div>
+
+        <div class="card-container">
+          <div class="card" id="rand"></div>
+          <p class="drinks">Universe Pick</p>
+        </div>
+      </div> -->
+    </section>
+
+    <section id="memories">
+      <div class="container px-4 py-5">
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="4"
+              aria-label="Slide 5"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="5"
+              aria-label="Slide 6"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="./assets/images/balkon_carousel/balkon7.jpeg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/images/balkon_carousel/balkon2.jpeg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/images/balkon_carousel/balkon3.jpeg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/images/balkon_carousel/balkon8.jpeg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/images/balkon_carousel/balkon9.jpeg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+      <div class="quick-nav">
+        <a href="./public/contact.html">Contact</a>
+        <a href="./public/photos_page.html">Photos</a>
+        <a href="./public/reservation_taker.html">Reservations</a>
+        <a href="./public/motivation.html">RandomMotivation</a>
       </div>
 
-      <div class="card-container">
-        <div class="card" id="ws"></div>
-        <p class="drinks">Whiskey Smash</p>
-      </div>
+      <footer><p>© 2023 Can Gokalp</p></footer>
 
-      <div class="card-container">
-        <div class="card" id="rand"></div>
-        <p class="drinks">Universe Pick</p>
-      </div>
-    </div>
+      <a
+        href="https://www.flaticon.com/free-icons/whiskey"
+        title="whiskey icons"
+        >Whiskey icons created by Freepik - Flaticon</a
+      >
+    </section>
 
-    <div class="quick-nav">
-      <a href="./public/contact.html">Contact</a>
-      <a href="./public/photos_page.html">Photos</a>
-      <a href="./public/reservation_taker.html">Reservations</a>
-      <a href="./public/motivation.html">RandomMotivation</a>
-    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
 
-    <footer><p>© 2023 Can Gokalp</p></footer>
+    <script src="./index.js" charset="utf-8"></script>
   </body>
 </html>
