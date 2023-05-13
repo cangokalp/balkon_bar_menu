@@ -1,9 +1,3 @@
-ol {
-  margin-left: -40px;
-  margin-top: -20px;
-  list-style-position: inside;
-}
-
 .image-background{
   width: 100%;
   height: 50vh;
@@ -12,28 +6,6 @@ ol {
   background-position: center;
   background-size: cover;
 }
-
-#menu{
-  background-color: whitesmoke;
-}
-
-/* .gradient-background {
-  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
-  background-size: 180% 180%;
-  animation: gradient-animation 18s ease infinite;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-} */
 
 #welcome{
   /* text-align: center; */
@@ -65,6 +37,66 @@ ol {
   }
 }
 
+
+#memories{
+  background-color: #E8E8E8;
+}
+
+#menu{
+  background-color: whitesmoke;
+}
+
+#footer{
+  background-color: whitesmoke;
+}
+
+
+/* .gradient-background {
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+
+.card-img-top{
+  width: 100%;
+  height: 40vw;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.card-cover{
+  max-width: 500px;
+  border-color: #800020;
+}
+
+.drink-card-col{
+  display: flex;
+  justify-content: center;
+}
+
+.icon-img{
+  height: 36px;
+  width: 36px;
+}
+
+.card-text{
+  font-family: 'Nunito', sans-serif;
+  color: black;
+  letter-spacing: 0.2rem;
+}
 
 
 @keyframes box-flicker {
@@ -121,6 +153,7 @@ ol {
 
 
 #rand-card{
+  border-color: black;
   animation: box-flicker 0.5s infinite alternate !important;
   border-radius: 2rem;
 }
@@ -165,3 +198,37 @@ ol {
 .card__face--back {
   transform: rotateY(180deg);
 }
+
+/* footer animation */
+
+.flying-emojis {
+  font-size: 1.5rem;
+  animation: slide 5s linear infinite alternate;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100vw) rotate(360deg);    
+  }
+}
+
+.blurring {
+  font-size: 2rem;
+  animation: slide-blur 5s linear infinite alternate;
+}
+
+
+
+@keyframes slide-blur {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw) rotate(360deg);    
+    filter: blur(3px);
+  }
+}
+
