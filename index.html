@@ -1,7 +1,9 @@
 <!-- for all designs -->
-<!-- TODO 1:  edit the other side of the flip w js-->
+<!-- TODO: work on flip card-->
+<!-- TODO 1: edit the other side of the flip w js-->
 <!-- TODO 6: Carousel sizing, background color -->
 <!-- TODO 5: Drink section background change to andromeda, hide other items when clicked universe pick-->
+<!-- TODO: other design everything flips like this https://codepen.io/aron-tw/pen/pLJqgE-->
 <!-- TODO: tabbed nav in the drinks seciton, whiskey icon when clicked you get whiskey cards, vs gin icon when clicked you get gin drink and then seasonal specials-->
 <!-- TODO: design2 where card only has image, title is written on the image, when clicked it takes the whole screen and gives the classic card look with desc, with a < icon on top left to go back-->
 
@@ -195,41 +197,34 @@
           class="row flex-row align-items-center justify-content-center py-2"
         >
           <div class="col-8 drink-card-col">
+
             <div class="scene scene--card">
-              <div
-                class="card rotating-card card-cover overflow-hidden text-bg-dark rounded-4"
-                id="rand-card"
-              >
-                <div class="card__face card__face--front">
-                  <div
-                    style="
-                      width: 400px;
-                      height: 400px;
-                      background-image: url('./assets/images/random.jpg');
-                      background-size: cover;
-                      background-repeat: no-repeat;
-                    "
-                  >
-                  <img
-                  src="./assets/icons/corner-down-right.svg"
-                  alt="mint icon"
-                  class="icon-img rounded-circle border border-black"
-                  style="position: absolute; top: 90%; left: 90%"
-                />
+
+              <div class="card rotating-card card-cover rounded-4" id="rand-card">
+
+                <div class="card__face card__face--front"></div>  
+                    
+                    <img
+                      src="./assets/icons/corner-down-right.svg"
+                      alt="mint icon"
+                      class="icon-img rounded-circle border border-black"
+                      style="position: absolute; top: 90%; left: 90%"
+                    /> 
+                 
+
+                <div class="card__face card__face--back">
+                  <!-- <img
+                      id="rand_card_back_img"
+                      src="./assets/images/random.jpg"
+                      alt="question mark"
+                    /> -->
                 </div>
-                </div>
-                <div
-                  style="
-                    width: 400px;
-                    height: 400px;
-                    background-image: url('./assets/images/random.jpg');
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                  "
-                ></div>
-                <div class="card__face card__face--back"></div>
+
+                
               </div>
+
             </div>
+
           </div>
 
           <div class="col-4 name-col">
